@@ -63,6 +63,11 @@ const paths = (arrays) => {
    return result;
 }
 
+const findPaths = (maze) => {
+    let result = paths(maze)
+    return result.map(path => path.dir)
+}
+
 let maze = [
     [' ', ' ', ' ', '*', ' ', ' ', ' '],
     ['*', '*', ' ', '*', ' ', '*', ' '],
@@ -72,4 +77,10 @@ let maze = [
 ];
 
 
-console.log(paths(maze))
+let mazeShort = [
+    [' ', '*', ' '],
+    [' ', ' ', ' '],
+    [' ', ' ', 'e']
+];
+
+console.log(findPaths(maze))
